@@ -1,3 +1,5 @@
-# angular-projeto02
+# Projeto 02 - Angular
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/angular-projeto02)
+Projeto 02 de Angular da matéria Tópicos Especiais em Sistemas para Internet II.
+
+Feito por Anna Haydee e Danubia Cunha
