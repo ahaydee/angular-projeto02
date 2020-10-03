@@ -9,6 +9,8 @@ import { HelloComponent } from './hello.component';
 import { HomeComponent } from './home/home.component';
 import { BitcoinService } from './bitcoin.service';
 import { BitcoinComponent } from './bitcoin/bitcoin.component';
+import { GithubService } from './github.service';
+import { GithubComponent } from './github/github.component';
 
 @NgModule({
   imports:      [ 
@@ -18,10 +20,11 @@ import { BitcoinComponent } from './bitcoin/bitcoin.component';
     RouterModule.forRoot([
       {path: '', component: HomeComponent},
       {path: 'bitcoin', component: BitcoinComponent},
+      {path: 'github', component: GithubComponent},
     ])
   ],
-  declarations: [ AppComponent, HelloComponent, HomeComponent, BitcoinComponent ],
+  declarations: [ AppComponent, HelloComponent, HomeComponent, BitcoinComponent, GithubComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [BitcoinService]
+  providers: [BitcoinService, GithubService]
 })
 export class AppModule { }

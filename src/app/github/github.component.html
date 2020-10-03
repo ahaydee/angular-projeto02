@@ -1,0 +1,39 @@
+<h1>Lista de Repositórios</h1>
+<div *ngIf="getRepositories()">
+  <hr/>
+  <div>
+    <input type="button" value="Atualizar" (click)="update()">
+    <br/>
+    <span>Atualizado em {{this.githubService.lastUpdate}}</span>
+  </div>
+  <div *ngFor="let github of this.getRepositories()">
+    <hr/>
+    <h3>{{github.name}}</h3>
+    <br/>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Repositório</th>
+          <th>Owner</th>
+          <th>Descrição</th>
+          <th>Criado</th>
+          <th>Atualizado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let repository of github.repositories">
+          <th>
+            <a href="{{repository.html_url}}" _target="blank">{{repository.name}}</a>
+            
+          </th>
+          <th>
+            <a href="{{repository.owner.html_url}}" _target="blank">{{repository.owner.login}}</a>
+          </th>
+          <th>{{repository.description}}</th>
+          <th>{{repository.created_at | date}}</th>
+          <th>{{repository.updated_at | date}}</th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
